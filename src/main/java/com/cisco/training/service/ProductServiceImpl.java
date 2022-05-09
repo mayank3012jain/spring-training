@@ -3,9 +3,13 @@ package com.cisco.training.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.cisco.training.dal.ProductDAO;
 import com.cisco.training.domain.Product;
 
+@Service
 public class ProductServiceImpl  implements ProductService{
 
 	private static final int PRODUCT_MIN_VALUE = 10_000;
@@ -13,12 +17,12 @@ public class ProductServiceImpl  implements ProductService{
 
 	private static final float PRODUCT_DELETION_THRESHOLD = 100_000;
 
-	
+	@Autowired
 	ProductDAO dao; // = new ProductDAOInMemImpl();
 	
-	public void setDao(ProductDAO dao) {
-		this.dao = dao;
-	}
+//	public void setDao(ProductDAO dao) {
+//		this.dao = dao;
+//	}
 	
 	@Override
 	public int addNewProduct(Product toBeAdded) {

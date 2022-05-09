@@ -2,16 +2,21 @@ package com.cisco.training.ui;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.cisco.training.domain.Product;
 import com.cisco.training.service.ProductService;
 
+@Component
 public class ProductConsoleUI {
 	
+	@Autowired
 	ProductService service; // = new ProductServiceImpl();
 	
-	public void setService(ProductService service) {
-		this.service = service;
-	}
+//	public void setService(ProductService service) {
+//		this.service = service;
+//	}
 	
 	public void createProductWithUI() {
 		Scanner kb = new Scanner(System.in);
