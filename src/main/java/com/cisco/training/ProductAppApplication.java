@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.cisco.training.dal.ProductDAOJpaImpl;
 import com.cisco.training.ui.ProductConsoleUI;
 
 @SpringBootApplication
@@ -13,8 +14,8 @@ public class ProductAppApplication {
 		ApplicationContext springContainer = 
 				SpringApplication.run(ProductAppApplication.class, args);
 		
-		ProductConsoleUI ui = springContainer.getBean(ProductConsoleUI.class);
-		ui.createProductWithUI();
+		ProductDAOJpaImpl bean = springContainer.getBean(ProductDAOJpaImpl.class);
+		bean.deleteById(1);
 	}
 
 }

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cisco.training.domain.Product;
 
-@Repository
+@Repository("SpecialDao")
 public class ProductDAOInMemImpl implements ProductDAO{
 	
 	Map<Integer, Product> db = new ConcurrentHashMap<>();
